@@ -1,6 +1,7 @@
 const { ApolloServer, gql } = require('apollo-server-lambda')
 const { RESTDataSource } = require('apollo-datasource-rest')
 const casual = require('casual')
+const ENGINE_API_KEY = 'service:AlfredOdling-3783:_5bAC7Q-cWxmC4RV0Cy0kw'
 
 // -------------- Datasources ---------------
 class RandomUserAPI extends RESTDataSource {
@@ -54,7 +55,7 @@ const resolvers = {
 
 const server = new ApolloServer({
   engine: {
-    apiKey: process.env.ENGINE_API_KEY,
+    apiKey: ENGINE_API_KEY,
   },
   dataSources,
   typeDefs,
